@@ -4,13 +4,15 @@
 //Vendors
 
 //Base
-
+@import "./Base/reset";
 
 //Components
 @import "./Components/buttongardient";
 
 //Layouts
 @import "./Layouts/header";
+@import "./Layouts/port-main";
+@import "./Layouts/contact-main";
 //Pages
 
 //Themes

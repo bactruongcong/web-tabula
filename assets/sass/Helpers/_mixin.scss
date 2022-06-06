@@ -13,3 +13,21 @@
     box-shadow: 0 0 0 $valuebox $cl-box inset;
     color: $cl-text;
 }
+@mixin menuDropdowHover($li-pad1, $li-pad2, $tx-al){
+    li{
+        padding: $li-pad1 $li-pad2;
+        list-style-type: none;
+        border-bottom: 1px solid #abb8c3;
+        text-align: $tx-al;
+        a{
+            background-color: transparent;
+            transition: all 0.5s;
+        }
+        & a:hover{
+                color: $cl-primary;
+        }
+    }
+    & li:last-child{
+        border: none;
+    }
+}

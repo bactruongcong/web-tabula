@@ -1,0 +1,59 @@
+@import "../Helpers/variables";
+@import "../Helpers/mixin";
+
+.port-main{
+    padding: 30px 0;
+    background-color: $cl-purple;
+}
+.port-main{
+    position: relative;
+
+    .bg-image-bottom{
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+    }
+    .port-container{
+        position: relative;
+        z-index: 3;
+    }
+    img{
+        width: 100%;
+        transition: all 0.5s;
+    }
+    .row > [class*=col]{
+       
+        padding: 20px 20px;
+        .port-item{
+            background-color: $cl-white-1;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.5s;
+            .port-header{
+                overflow: hidden;
+                &:hover img{
+                    transform: scale(1.1);
+                }
+            }
+            .port-content{
+                padding: 20px 10px;
+                text-align: center;
+                span{
+                    font-size: .75rem;
+                    margin-bottom: .7em;
+                    color: $cl-primary;
+                    font-weight: $fw-6;
+                }
+                h3{
+                    font-size: 1.5rem;
+                    font-weight: $fw-7;
+                }
+            }
+            &:hover{
+                box-shadow:0 0 100px 10px rgba(0,0,0,.15);
+            }
+           
+        }
+    }
+    
+}

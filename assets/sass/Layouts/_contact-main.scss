@@ -1,0 +1,71 @@
+@import "../Helpers/variables";
+@import "../Helpers/mixin";
+
+.contact-main{
+    max-width: 60%;
+    margin: 0 auto;
+    .contact-left{
+        img{
+            width: 100%;
+        }
+    }
+    .contact-right{
+        .contact-right-main{
+            background-color: $cl-white-1;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px black;
+        }
+        form .row{
+            [class*=col]:nth-of-type(1){
+                padding-left: 0;
+                padding-right: 5px;
+             }
+             [class*=col]:nth-of-type(2){
+                padding-left: 5px;
+                padding-right: 0;
+              }
+            input{
+                border: none;
+                background-color: transparent;
+                outline: none;
+            }
+            .inputName,.inputEmail{
+                width: 100%;
+            }
+            .inputName,.inputEmail,.selectCountry,.ContactMessage{
+                margin-top: 20px;
+                padding: 10px 10px;
+                border: 1px solid $cl-primary;
+                border-radius: 100px;
+                input{
+                    border: none;
+                    outline: none;
+                }
+                select{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                }
+            }
+            .ContactMessage{
+                border-radius: 20px;
+                textarea{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                }
+            }
+            .ContactButton{
+                margin-top: 20px;
+                border: none;
+                padding: 10px 0;
+                a{  
+                    width: 40%;
+                    display: inline-block;
+                    text-align: center;
+                    // padding: 30px 30px;
+                }
+            }
+        }
+    }
+}

@@ -2,11 +2,30 @@
 @import "../Helpers/mixin";
 
 .header-main{
+    padding-bottom: 4em;
+    position: relative;
+    .bg-image-top{
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: -1;
+        img{
+            max-width: 100%;
+        }
+    }
+    .bg-image-bottom{
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        img{
+            max-width: 100%;
+        }
+    }
+  .header-menu{
     .nav-item{
-        margin: 15px;
+        margin: 5px;
         position: relative;
-        background-color: burlywood;
-        padding: 20px 15px;
+        padding: 30px 10px;
         .nav-link::after{
            margin-bottom: 10px;
            position: absolute;
@@ -15,7 +34,7 @@
            border-radius: 100px;
            border-width: 0px;
            height: 10px;
-           background-color: black;
+           background-color: $cl-primary;
            width: 10px;
            transform: translate(-50%) scale(0);
            transition: all 0.5s;
@@ -23,7 +42,77 @@
         &:hover .nav-link::after{
             transform: translate(-50%) scale(1.2);
         }
+        .dropdown-item{
+            padding: 0;
+        }
+        .dropdown-menu{
+            display: block;
+            top: 100%;
+            opacity: 0;
+            visibility: hidden;
+            border-radius: 0;
+            width: 220px;
+            padding: 0 15px;
+            margin-top: .125rem;
+            box-shadow: 0 0 10px 0 rgba(204,204,204,.5);
+            @include menuDropdowHover(10px,0px,left);
+            transform: scale(.9);
+            transition: all 0.3s;
+        }
+        &:hover .dropdown-menu{
+            visibility: visible;
+            opacity: 1;
+            transform: scale(1);
+        }
+        
     }
+        .nav-item:nth-child(1),
+        .nav-item:nth-child(6){
+            .dropdown-menu{
+                left: -300px;
+                width: 700px;
+                border-radius: 0;
+                .dropdown-menu-hover-main .dropdown-item{
+                    display: none;
+                }
+                .row{
+                    margin: 0;
+                }
+                .dropdown-menu-hover-main{
+                    ul{
+                        padding: 0 15px;
+                    }
+                    li{
+                        padding: 10px 0;
+                        list-style-type: none;
+                        border-bottom: 1px solid #abb8c3;
+                    }
+                    .drophover-main-item{
+                        text-decoration: none;
+                        color: $cl-black-1;
+                        cursor: pointer;
+                        transition: all 0.5s;
+                        // display: inline-block;
+                        &:hover{
+                            color: $cl-primary;
+                        }
+                    }
+                    & li:last-child{
+                        border: none;
+                    }
+                    & li:nth-of-type(1){
+                        border-bottom:2px solid $cl-primary;
+                    }
+                
+                }
+            }
+        }
+        .nav-item:nth-child(5){
+            .dropdown-menu{
+                left: -150%;
+                @include menuDropdowHover(10px,0px,right);
+            }
+        }
     .menu-socials{
         display: flex;
         justify-content: center;
@@ -57,5 +146,22 @@
             }
         } 
     }
+  }
+  .header-about{
+    
+    .about-top{
+        .subTitle{
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: $cl-primary;
+            font-weight: $fw-6;
+        }
+        .title{
+            font-weight: 700;
+            font-size: 3.8rem;
+        }
+      }
+  }
+
 }
 
