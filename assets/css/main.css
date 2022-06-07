@@ -323,7 +323,7 @@
 }
 
 .contact-main {
-  max-width: 60%;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -332,9 +332,16 @@
 }
 
 .contact-main .contact-right .contact-right-main {
+  width: 100%;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 10px 10px 10px black;
+  box-shadow: #000000 0px 30px 30px -10px;
+}
+
+.contact-main .contact-right .contact-right-main h3 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 2.5rem;
 }
 
 .contact-main .contact-right form .row [class*=col]:nth-of-type(1) {
@@ -359,18 +366,25 @@
 
 .contact-main .contact-right form .row .inputName, .contact-main .contact-right form .row .inputEmail, .contact-main .contact-right form .row .selectCountry, .contact-main .contact-right form .row .ContactMessage {
   margin-top: 20px;
-  padding: 10px 10px;
-  border: 1px solid #b61984;
-  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
 }
 
 .contact-main .contact-right form .row .inputName input, .contact-main .contact-right form .row .inputEmail input, .contact-main .contact-right form .row .selectCountry input, .contact-main .contact-right form .row .ContactMessage input {
   border: none;
   outline: none;
+  padding: 1em 1em 1em 3.5em !important;
+  font-size: .8em !important;
+  height: 3.2em;
 }
 
 .contact-main .contact-right form .row .inputName select, .contact-main .contact-right form .row .inputEmail select, .contact-main .contact-right form .row .selectCountry select, .contact-main .contact-right form .row .ContactMessage select {
   width: 100%;
+  height: 3.2em;
+  font-size: .8em;
+  opacity: .8;
+  padding: 0 0 0 3em;
+  line-height: 3.2em;
   border: none;
   outline: none;
 }
@@ -383,17 +397,29 @@
   width: 100%;
   border: none;
   outline: none;
+  padding: 1em 1em 1em 3.5em !important;
+  height: 90px;
+  line-height: 1.5;
+  font-size: .8em !important;
 }
 
 .contact-main .contact-right form .row .ContactButton {
-  margin-top: 20px;
   border: none;
-  padding: 10px 0;
 }
 
 .contact-main .contact-right form .row .ContactButton a {
   width: 40%;
   display: inline-block;
   text-align: center;
+}
+
+.contact-main .contact-right form .row .ContactButton a input {
+  line-height: 2em;
+  color: white;
+  transition: all 300ms;
+}
+
+.contact-main .contact-right form .row .ContactButton :hover input {
+  color: #b61984;
 }
 /*# sourceMappingURL=main.css.map */
