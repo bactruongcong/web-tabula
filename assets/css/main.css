@@ -334,7 +334,7 @@
 .contact-main .contact-right .contact-right-main {
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 10px 10px 10px black;
+  box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
 }
 
 .contact-main .contact-right form .row [class*=col]:nth-of-type(1) {
