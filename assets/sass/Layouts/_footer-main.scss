@@ -1,0 +1,98 @@
+.footer-main .menu-socials, .footer-main .socials{
+    margin-left: 0;
+}
+.footer-main{
+  
+    // position: relative;
+//    padding-top: 8em;
+   padding-bottom: 8em;
+   background-image: url("~/../../../assets/image/footer_background.jpg");
+   background-size: 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+   .footer-content{
+    // position: relative;
+    // top: -8em;
+    color: $cl-white-1;
+    font-size: .9em;
+    .row{
+        $number: 1;
+        @for $number from 1 to 5{
+            .fti-#{$number}{
+                animation-delay: $number * 0.2s;
+             }
+            }
+        } 
+    .footer__item{
+        ul{
+            padding-left: 0;
+    
+                li{
+                   padding: 0.8em 0;
+                    list-style: none;
+    
+                    a{
+                        font-size: .9em;
+                        text-decoration: none;
+                        color: $cl-white-1;
+                    }
+                }
+                .ContactButtonEmail{
+              
+
+                    input{
+                        border-radius: 100px;
+                        text-align: center;
+                        text-align: center;
+                        width: 100%;
+                        color: $cl-white-1;
+                        padding: 10px 10px;
+                        border: 1px solid rgba(255,255,255,.1);
+                        transition: all 300ms;
+                      &:focus{
+                        border: 1px solid rgba(255,255,255,1);
+                      }
+                    }
+                    
+               }
+               .btnWidget{
+                a{
+                    width: 100%;
+                    @include linkHover($cl-white-1, $cl-white-1, 3em);
+                    input{
+                      
+                        color: black;
+                        transition:  all 300ms;
+                       
+                    }
+                }
+                & a:hover{
+                    @include linkHover($cl-primary, $cl-white-1, 1px);
+                    input{
+                        color: $cl-white-1;
+                    }
+                }
+               }
+            
+        }
+    &:nth-of-type(2), &:nth-of-type(3){
+        ul{
+            li{
+                padding:  .8em 0;
+                border-bottom: 1px solid rgba(0,0,0,.1);
+                a:hover{
+                    opacity: .8;
+                }
+            }
+            
+        }
+    }
+    }
+    
+   }
+}
+@include responsive(large){
+    .footer-main{
+        background-size: cover;
+    }
+}

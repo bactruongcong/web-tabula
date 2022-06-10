@@ -11,3 +11,34 @@
         @include linkHover($cl-primary, $cl-primary, 1px);
     }
 }
+input{
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.ContactButton{
+    // margin-bottom: 30px;
+    border: none;
+    // height: 4em;
+    // padding: 35px 0;
+    a{  
+        display: inline-block;
+        text-align: center;
+        // padding: 30px 30px;
+        input{
+            line-height: 2em;
+            color: white;
+            transition: all 300ms;
+        }
+    }
+    
+}
+.contact-main{
+    .ContactButton{
+        :hover input{
+            color: $cl-primary;
+        }
+    }
+}
+
+

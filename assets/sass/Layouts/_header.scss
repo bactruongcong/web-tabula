@@ -1,9 +1,34 @@
 @import "../Helpers/variables";
 @import "../Helpers/mixin";
 
-.header-main{
-    padding-bottom: 4em;
+.header-menu-mobile{
+    display: none;
+}
+.header-main-primary{
     position: relative;
+
+}
+.header-main-primary.row{
+    margin-right: 0;
+    flex-wrap: nowrap;
+}
+.menu-left{
+    width: 0%;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    transition: all 0.5s;
+}
+.menu-right{
+    width: 100%;
+}
+.header-main{
+    position: relative;
+    .menu-right{
+        padding-bottom: 4em;
+        position: relative;
+    }
+    
     .bg-image-top{
         top: 0;
         left: 0;
@@ -38,6 +63,7 @@
            width: 10px;
            transform: translate(-50%) scale(0);
            transition: all 0.5s;
+           z-index: 3;
         }
         &:hover .nav-link::after{
             transform: translate(-50%) scale(1.2);
@@ -47,11 +73,12 @@
         }
         .dropdown-menu{
             display: block;
-            top: 100%;
+            top: 83%;
             opacity: 0;
             visibility: hidden;
             border-radius: 0;
             width: 220px;
+           z-index: 2;
             padding: 0 15px;
             margin-top: .125rem;
             box-shadow: 0 0 10px 0 rgba(204,204,204,.5);
@@ -113,39 +140,12 @@
                 @include menuDropdowHover(10px,0px,right);
             }
         }
-    .menu-socials{
-        display: flex;
-        justify-content: center;
-        margin-left: 20px;
-        align-items: center;
-       
-        .icon-phone::before{
-            @include socialsIcon($font-awsome-free, $fw-9, "\f879");
+        .nav-item:nth-child(6){
+            .dropdown-menu{
+                @include menuDropdowHover(10px,0px,right);
+            }
         }
-        .socials{
-            margin-left: 10px;
-            a{
-                display: inline-block;
-                margin-left: 5px;
-                @include socialsStyle($cl-black-1,$fs-1);
-            }
-            .socials-icon-tw::after{
-                @include socialsIcon($font-awsome-brands, $fw-9, "\f099");
-            }
-            .socials-icon-fb::after{
-                @include socialsIcon($font-awsome-brands, $fw-9, "\f39e");
-            }
-            .socials-icon-yt::after{
-                @include socialsIcon($font-awsome-brands, $fw-9, "\f167");
-            }
-            .socials-icon-ins::after{
-                @include socialsIcon($font-awsome-brands, $fw-9, "\f16d");
-            }
-            &  a:hover{
-                color: $cl-primary; 
-            }
-        } 
-    }
+    
   }
   .header-about{
     
@@ -163,5 +163,69 @@
       }
   }
 
+}
+.dl-none{
+    display: none;
+}
+.open-left-menu{   
+    width: 30%;
+    padding: 0;
+    .header-menu-left-mobile{
+        position: fixed;
+        overflow-y: scroll;
+        width: 30%;
+        height: 100%;
+    }
+    .nav-item .dropdown-menu{
+        position: relative;
+        top: 0;
+        left: 0;
+    
+    }
+    .menu-socials {
+        margin-left: 0;
+        .btnWidget{
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+    }
+}
+.open-right-menu{
+    width: 70%;
+    padding-left: 0;
+    transition: all 0.5s;
+    .menu-mobile-main{
+        .togle-menu-mobile{
+            display: none;
+        }
+        .menu-mobile-logo{
+            visibility: hidden;
+        }
+        .togle-menu-close-mobile.dl-none{
+            display: block;
+        }
+    }
+}
+
+@include responsive("large"){
+    .header-menu{
+        display: none;
+    }
+    .header-menu-mobile{
+        background-color: $cl-white-1;
+        display: block;
+      .menu-mobile-main{
+        svg{
+            color: black;
+        }
+        img{
+            max-height: 50px;
+        }
+        .togle-menu-mobile{
+            padding: 0px 10px;
+        }
+      }
+     
+    }
 }
 

@@ -1,0 +1,26 @@
+.inputName::after,.inputEmail::after,.selectCountry::after,.ContactMessage::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f007";
+    position: absolute;
+    top: 0.9em;
+    left: 1em;
+    line-height: 1;
+    color: $cl-primary;
+}
+.inputEmail::after{
+    content: "\f0e0";
+    
+}
+.selectCountry::after{
+    content: "\f19d";
+}
+.ContactMessage::after{
+    content: "\f27a";
+}
+.togle-menu-close-mobile a::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00d";
+    font-size: 1.5em;
+}

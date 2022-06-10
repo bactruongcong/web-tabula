@@ -29,4 +29,11 @@ $fw-9: 900;
 
 //font-family
 $font-awsome-brands: "Font Awesome 5 Brands";
-$font-awsome-free: "Font Awesome 5 Free"
+$font-awsome-free: "Font Awesome 5 Free";
+ //break points
+ $breakpoints:(
+    'extra-l': 1200px,
+    'large': 992px, 
+    'medium': 768px,
+    'small': 567px,
+ )
